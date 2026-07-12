@@ -8,4 +8,10 @@ interface Props {
 const { class: className = "h-full w-full" } = Astro.props;
 ---
 
-<img src={withBase("/assets/svg/icon-world-map.svg")} alt="" class:list={["rounded-3xl object-cover", className]} aria-hidden="true" loading="lazy" />
+<img
+  src={withBase("/assets/svg/icon-world-map.svg")}
+  alt=""
+  class:list={["rounded-3xl object-cover", className]}
+  aria-hidden="true"
+  loading="lazy"
+/>
