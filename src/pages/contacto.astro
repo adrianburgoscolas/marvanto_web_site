@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Telf from "../components/Telf.astro";
+import Address from "../components/Address.astro";
+import Email from "../components/Email.astro";
+import Map from "../components/Map.astro";
+import IconPhone from "../components/icons/IconPhone.astro";
+import IconLocation from "../components/icons/IconLocation.astro";
+import IconMail from "../components/icons/IconMail.astro";
+import IconMap from "../components/icons/IconMap.astro";
+---
+
+<Layout
+  title="Contacto"
+  description="Contacte con Marvanto Distribution. Hablemos de negocios."
+>
+  <Header slot="header" />
+
+  <section
+    class="gradient-hero relative overflow-hidden py-20 md:py-28"
+    aria-labelledby="contact-heading"
+  >
+    <div
+      class="pointer-events-none absolute top-0 right-0 h-80 w-80 rounded-full bg-marvanto-accent/15 blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <p
+        class="mb-4 text-sm font-semibold tracking-[0.2em] text-marvanto-accent uppercase"
+      >
+        Ponte en contacto
+      </p>
+      <h1
+        id="contact-heading"
+        class="max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        Hablemos de negocios.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-white/70">
+        Cuéntenos su proyecto y nuestro equipo le responderá en menos de 24
+        horas con una propuesta personalizada.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="relative -mt-8 pb-20 md:pb-28"
+    aria-label="Formulario y datos de contacto"
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10">
+        <div class="glass-card rounded-3xl p-6 md:p-8 lg:col-span-3 lg:p-10">
+          <Map slot="map" />
+        </div>
+
+        <div
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1"
+        >
+          <article
+            class="glass-card flex flex-col rounded-3xl p-6 transition-all hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <IconPhone class="mb-4 h-10 w-10" />
+            <h3
+              class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+            >
+              Llámanos
+            </h3>
+            <span class="text-marvanto-muted">
+              <Telf slot="telef" />
+            </span>
+          </article>
+
+          <article
+            class="glass-card flex flex-col rounded-3xl p-6 transition-all hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <IconLocation class="mb-4 h-10 w-10" />
+            <h3
+              class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+            >
+              Visítanos
+            </h3>
+            <Address slot="address" />
+          </article>
+
+          <article
+            class="glass-card overflow-hidden rounded-3xl transition-all hover:-translate-y-1 hover:shadow-2xl lg:col-span-1"
+            aria-label="Mapa de ubicación"
+          >
+            <IconMap class="h-48 w-full lg:h-52" />
+          </article>
+
+          <article
+            class="glass-card flex items-center justify-between rounded-3xl p-6 transition-all hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div>
+              <h3
+                class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+              >
+                Escríbenos
+              </h3>
+              <span class="text-marvanto-muted">
+                <Email slot="email" />
+              </span>
+            </div>
+            <IconMail class="h-12 w-12 shrink-0 opacity-70" />
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-7xl px-4 pb-16 lg:hidden"
+    aria-label="Accesos rápidos de contacto"
+  >
+    <div class="flex justify-center gap-8">
+      <a
+        href="tel:+34900000000"
+        class="flex flex-col items-center gap-2"
+        aria-label="Llamar"
+      >
+        <span
+          class="flex h-14 w-14 items-center justify-center rounded-full glass-card"
+          ><IconPhone class="h-7 w-7" /></span
+        >
+        <span
+          class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+          >Llámanos</span
+        >
+      </a>
+      <a
+        href="#"
+        class="flex flex-col items-center gap-2"
+        aria-label="Ubicación"
+      >
+        <span
+          class="flex h-14 w-14 items-center justify-center rounded-full glass-card"
+          ><IconLocation class="h-7 w-7" /></span
+        >
+        <span
+          class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+          >Visítanos</span
+        >
+      </a>
+      <a
+        href="mailto:info@marvanto.com"
+        class="flex flex-col items-center gap-2"
+        aria-label="Email"
+      >
+        <span
+          class="flex h-14 w-14 items-center justify-center rounded-full glass-card"
+          ><IconMail class="h-7 w-7" /></span
+        >
+        <span
+          class="text-xs font-bold tracking-widest text-marvanto-muted uppercase"
+          >Escríbenos</span
+        >
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

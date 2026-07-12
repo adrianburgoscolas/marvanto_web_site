@@ -1,17 +1,440 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BentoCard from "../components/BentoCard.astro";
+import StatCard from "../components/StatCard.astro";
+import IconBoxes from "../components/icons/IconBoxes.astro";
+import IconStore from "../components/icons/IconStore.astro";
+import IconCart from "../components/icons/IconCart.astro";
+import IconGlobe from "../components/icons/IconGlobe.astro";
+import IconWorldMap from "../components/icons/IconWorldMap.astro";
+import IconQuote from "../components/icons/IconQuote.astro";
 
+const commitments = [
+  "Confidencialidad absoluta en cada transacción",
+  "Profesionalismo con procesos transparentes y fiables",
+  "Respuesta rápida y soporte personalizado directo",
+  "Red verificada de proveedores en América, Europa y Asia",
+];
+
+const features = [
+  {
+    title: "Logística integral",
+    text: "Envíos mayoristas e individuales dentro y fuera del país, adaptados a su operación.",
+  },
+  {
+    title: "Compra flexible",
+    text: "Adquiera por volumen o por unidad según las necesidades de su negocio.",
+  },
+  {
+    title: "Inteligencia de mercado",
+    text: "Identifique productos de alto potencial en mercados emergentes con datos expertos.",
+  },
+  {
+    title: "Crecimiento de marca",
+    text: "Le conectamos con aliados estratégicos para lanzar o escalar su marca de reventa.",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Inicio"
+  description="Marvanto Distribution Inc — Su socio de confianza en distribución global."
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section
+    class="gradient-hero relative overflow-hidden"
+    aria-labelledby="hero-heading"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.15]"
+      aria-hidden="true"
+    >
+      <img
+        src="/assets/svg/icon-world-map.svg"
+        alt=""
+        class="h-full w-full bg-marvanto-accent object-cover"
+      />
+    </div>
+    <div
+      class="pointer-events-none absolute top-1/4 -right-32 h-96 w-96 rounded-full bg-marvanto-accent/20 blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute bottom-0 -left-24 h-72 w-72 rounded-full bg-marvanto-accent-light/10 blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div
+      class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-20 md:px-8 md:py-28 lg:grid-cols-2 lg:gap-16 lg:px-12 lg:py-36"
+    >
+      <div class="animate-fade-up">
+        <p
+          class="mb-4 text-sm font-semibold tracking-[0.2em] text-marvanto-accent uppercase"
+        >
+          Conectando oportunidades. Entregando confianza.
+        </p>
+        <h1
+          id="hero-heading"
+          class="text-4xl leading-[1.08] font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+        >
+          <span class="text-gradient">Marvanto</span>
+          <span class="mt-1 block text-white">Distribution</span>
+        </h1>
+        <p
+          class="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
+        >
+          Como intermediario de confianza, conectamos compradores y proveedores
+          con servicios logísticos, financieros y comerciales integrales.
+          Operaciones mayoristas y minoristas seguras a nivel nacional e
+          internacional.
+        </p>
+        <p class="mt-4 text-sm font-medium text-marvanto-muted">
+          Nuestros servicios respaldan operaciones mayoristas y minoristas en
+          mercados locales y globales.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/contacto"
+            class="inline-flex min-h-12 items-center rounded-full bg-marvanto-accent px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-marvanto-accent/40 transition-all duration-300 hover:scale-105 hover:bg-marvanto-accent-hover"
+          >
+            Contáctanos
+          </a>
+          <a
+            href="#categorias"
+            class="inline-flex min-h-12 items-center rounded-full border border-white/20 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-marvanto-accent/50 hover:bg-white/10"
+          >
+            Conoce nuestras categorías
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="animate-fade-up-delay relative flex items-center justify-center lg:justify-end"
+        aria-hidden="true"
+      >
+        <div class="animate-float relative h-72 w-72 md:h-96 md:w-96">
+          <div
+            class="absolute inset-0 rounded-full bg-marvanto-accent/20 blur-3xl"
+          >
+          </div>
+          <IconGlobe class="relative h-full w-full glow-accent" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner section -->
+  <section
+    class="relative border-y border-white/5 py-20 md:py-28"
+    aria-labelledby="partner-heading"
+  >
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12"
+    >
+      <div class="relative overflow-hidden rounded-3xl">
+        <IconWorldMap class="w-full rounded-3xl" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-marvanto-bg/80 to-transparent"
+        >
+        </div>
+      </div>
+      <div>
+        <SectionHeading
+          eyebrow="Su aliado en comercio global"
+          title="Su socio de confianza en distribución global"
+          description="Ofrecemos una amplia gama de productos — electrodomésticos, alimentos, suministros automotrices, soluciones energéticas y ferretería — cuidadosamente seleccionados para las necesidades del negocio moderno."
+        />
+        <p class="mb-8 text-marvanto-muted italic">
+          Asóciese con nosotros y simplifique la forma en que comercializa.
+        </p>
+        <a
+          href="/contacto"
+          class="inline-flex min-h-12 items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-marvanto-bg transition-all hover:bg-marvanto-accent hover:text-white"
+        >
+          Saber más
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+            ><path
+              d="M5 12H19M19 12L13 6M19 12L13 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path></svg
+          >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section
+    class="gradient-section py-16 md:py-20"
+    aria-label="Estadísticas"
+  >
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 md:grid-cols-4 md:gap-6 md:px-8 lg:px-12"
+    >
+      <StatCard
+        value="30"
+        label="Países con presencia"
+      />
+      <StatCard
+        value="500"
+        label="Clientes activos"
+      />
+      <StatCard
+        value="50"
+        label="Proveedores verificados"
+      />
+      <StatCard
+        value="99"
+        suffix="%"
+        label="Entregas a tiempo"
+      />
+    </div>
+  </section>
+
+  <!-- Services Bento -->
+  <section
+    id="categorias"
+    class="py-20 md:py-28"
+    aria-labelledby="bento-heading"
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <SectionHeading
+        eyebrow="Nuestros servicios"
+        title="Soluciones para cada canal de venta"
+        description="Mayoristas, minoristas y e-commerce con la infraestructura que su negocio necesita para crecer."
+        align="center"
+      />
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <BentoCard
+          title="Mayoristas"
+          description="Volumen, precios competitivos y logística optimizada para distribuidores."
+          buttonText="Saber Más"
+          buttonHref="/contacto"
+        >
+          <IconBoxes
+            slot="icon"
+            class="h-28 w-28"
+          />
+        </BentoCard>
+        <BentoCard
+          title="Minoristas"
+          description="Puntos de venta y experiencias que conectan su marca con el consumidor final."
+          buttonText="Saber Más"
+          buttonHref="/contacto"
+        >
+          <IconStore
+            slot="icon"
+            class="h-28 w-28"
+          />
+        </BentoCard>
+        <BentoCard
+          title="Online"
+          description="E-commerce 24/7 para llegar a clientes en cualquier parte del mundo."
+          buttonText="Comprar Ahora"
+          buttonHref="/contacto"
+        >
+          <IconCart
+            slot="icon"
+            class="h-28 w-28"
+          />
+        </BentoCard>
+      </div>
+
+      <div class="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <BentoCard variant="map">
+          <IconWorldMap
+            slot="icon"
+            class="h-full min-h-[220px] w-full"
+          />
+        </BentoCard>
+        <BentoCard
+          title="Nuestro Alcance"
+          description="Red logística global con entregas puntuales y seguras en más de 30 países."
+          buttonText="Nuestro Plan"
+          buttonHref="/contacto"
+        />
+        <BentoCard variant="glass">
+          <IconQuote
+            slot="icon"
+            class="h-12 w-12"
+          />
+          <blockquote>
+            <p
+              class="text-base leading-relaxed text-white/80 italic md:text-lg"
+            >
+              "La confianza se construye con cada entrega. En Marvanto, cada
+              envío es una promesa cumplida."
+            </p>
+            <footer class="mt-4 text-sm font-bold text-marvanto-accent">
+              — Equipo Marvanto
+            </footer>
+          </blockquote>
+        </BentoCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commitment -->
+  <section
+    class="relative py-20 md:py-28"
+    aria-labelledby="commitment-heading"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-marvanto-accent/5 to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <div class="overflow-hidden rounded-3xl glass p-8 md:p-12 lg:p-16">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHeading
+              eyebrow="Nuestro compromiso"
+              title="Excelencia con integridad en cada paso"
+              description="En el centro de nuestro negocio está la promesa de entregar resultados con los más altos estándares de calidad y confianza."
+            />
+          </div>
+          <ul class="space-y-4">
+            {
+              commitments.map((item) => (
+                <li class="flex items-start gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10">
+                  <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marvanto-accent/20 text-marvanto-accent">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M5 13L9 17L19 7"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-sm leading-relaxed text-white/85 md:text-base">
+                    {item}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="mt-10 flex justify-center lg:justify-start">
+          <a
+            href="/contacto"
+            class="inline-flex min-h-12 items-center rounded-full bg-marvanto-accent px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-marvanto-accent/30 transition-all hover:scale-105 hover:bg-marvanto-accent-hover"
+          >
+            Solicitar ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features grid -->
+  <section
+    class="border-t border-white/5 py-20 md:py-28"
+    aria-labelledby="features-heading"
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <SectionHeading
+        eyebrow="Logística y comercio"
+        title="Hola, somos su empresa de distribución"
+        description="Integramos cadena de suministro, comercio y crecimiento de marca en una sola operación confiable."
+        align="center"
+      />
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          features.map((f, i) => (
+            <article class="group rounded-2xl border border-white/5 bg-white/[0.03] p-6 transition-all duration-300 hover:border-marvanto-accent/30 hover:bg-white/[0.06]">
+              <span class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-marvanto-accent/15 text-sm font-extrabold text-marvanto-accent">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 class="text-base font-bold text-white">{f.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-marvanto-muted">
+                {f.text}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section
+    class="pb-20 md:pb-28"
+    aria-label="Llamada a la acción"
+  >
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+      <div
+        class="gradient-cta relative overflow-hidden rounded-3xl px-8 py-16 text-center md:px-16 md:py-20"
+      >
+        <div
+          class="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+          aria-hidden="true"
+        >
+        </div>
+        <h2 class="relative text-2xl font-extrabold text-white md:text-4xl">
+          ¿Listo para transformar su cadena de suministro?
+        </h2>
+        <p class="relative mx-auto mt-4 max-w-xl text-white/80">
+          Eficiencia, confianza y resultados — en cada paso del camino.
+        </p>
+        <a
+          href="/contacto"
+          class="relative mt-8 inline-flex min-h-12 items-center rounded-full bg-white px-10 py-3 text-sm font-bold text-marvanto-bg transition-all hover:scale-105 hover:shadow-xl"
+        >
+          Contáctanos hoy
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const stats = document.querySelectorAll(".stat-value");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target ?? "0", 10);
+        const duration = 1500;
+        const start = performance.now();
+        const animate = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = String(Math.floor(eased * target));
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        observer.unobserve(el);
+      });
+    },
+    { threshold: 0.3 },
+  );
+  stats.forEach((s) => observer.observe(s));
+</script>

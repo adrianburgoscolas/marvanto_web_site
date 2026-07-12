@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "h-12 w-12" } = Astro.props;
+---
+
+<img
+  src="/assets/marvanto_logo.png"
+  alt=""
+  class={className}
+  aria-hidden="true"
+  loading="lazy"
+/>

@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "h-10 w-10" } = Astro.props;
+---
+
+<img src="/assets/svg/icon-phone.svg" alt="" class={className} aria-hidden="true" loading="lazy" />

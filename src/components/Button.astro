@@ -1,0 +1,38 @@
+---
+interface Props {
+  href?: string;
+  type?: "button" | "submit";
+  variant?: "primary" | "accent" | "outline";
+  class?: string;
+}
+
+const {
+  href,
+  type = "button",
+  variant = "primary",
+  class: className = "",
+} = Astro.props;
+
+const base =
+  "inline-flex min-h-12 items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300";
+
+const variants = {
+  primary: "bg-marvanto-bg text-white hover:bg-marvanto-accent hover:scale-[1.02]",
+  accent: "bg-marvanto-accent text-white hover:bg-marvanto-accent-hover hover:scale-105",
+  outline: "border-2 border-marvanto-accent text-marvanto-accent hover:bg-marvanto-accent hover:text-white",
+};
+
+const classes = [base, variants[variant], className];
+---
+
+{
+  href ? (
+    <a href={href} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={classes}>
+      <slot />
+    </button>
+  )
+}
