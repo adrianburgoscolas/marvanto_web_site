@@ -1,0 +1,39 @@
+---
+interface Props {
+  class?: string;
+  showText?: boolean;
+}
+
+const { class: className = "", showText = true } = Astro.props;
+---
+
+<a
+  href="/"
+  class:list={["group inline-flex items-center gap-3", className]}
+  aria-label="Marvanto Distribution — Inicio"
+>
+  <img
+    src="/assets/marvanto_logo.png"
+    alt=""
+    width="40"
+    height="40"
+    class="shrink-0 transition-transform duration-300 group-hover:scale-105"
+    aria-hidden="true"
+  />
+  {
+    showText && (
+      <div class="hidden flex-col sm:flex items-center">
+        <span class="text-base leading-none font-extrabold tracking-wider text-white uppercase lg:text-lg">
+          Marvanto
+        </span>
+        <span class="mt-1 flex items-center gap-1">
+          <span class="h-px w-3 bg-marvanto-accent/60" />
+          <span class="text-[8px] font-semibold tracking-[0.2em] text-marvanto-accent uppercase">
+            Distribution
+          </span>
+          <span class="h-px w-3 bg-marvanto-accent/60" />
+        </span>
+      </div>
+    )
+  }
+</a>

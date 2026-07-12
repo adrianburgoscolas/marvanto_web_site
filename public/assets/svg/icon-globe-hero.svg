@@ -1,0 +1,36 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Globo">
+  <defs>
+    <radialGradient id="hero-globe-glow" cx="42%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#3D9AFF" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#0B72E7" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#031124" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hero-globe-sphere" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1A4A8A"/>
+      <stop offset="55%" stop-color="#0B2D5C"/>
+      <stop offset="100%" stop-color="#031124"/>
+    </radialGradient>
+    <linearGradient id="hero-globe-highlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="200" cy="200" r="168" fill="url(#hero-globe-glow)"/>
+  <circle cx="200" cy="200" r="132" fill="url(#hero-globe-sphere)" stroke="#0B72E7" stroke-width="2" opacity="0.85"/>
+  <circle cx="200" cy="200" r="132" fill="url(#hero-globe-highlight)"/>
+
+  <ellipse cx="200" cy="200" rx="132" ry="38" stroke="#0B72E7" stroke-width="1.25" opacity="0.45"/>
+  <ellipse cx="200" cy="200" rx="132" ry="72" stroke="#0B72E7" stroke-width="1" opacity="0.28"/>
+  <ellipse cx="200" cy="200" rx="132" ry="108" stroke="#0B72E7" stroke-width="0.85" opacity="0.18"/>
+  <ellipse cx="200" cy="200" rx="36" ry="132" stroke="#0B72E7" stroke-width="1" opacity="0.32"/>
+  <ellipse cx="200" cy="200" rx="72" ry="132" stroke="#0B72E7" stroke-width="0.85" opacity="0.22"/>
+  <ellipse cx="200" cy="200" rx="108" ry="132" stroke="#0B72E7" stroke-width="0.75" opacity="0.16"/>
+
+  <path d="M138 168C150 146 176 132 198 140C214 146 210 170 192 182C172 194 144 188 138 168Z" fill="#0B72E7" opacity="0.55"/>
+  <path d="M222 152C246 134 278 142 290 164C302 186 282 206 258 202C234 198 214 176 222 152Z" fill="#0B72E7" opacity="0.48"/>
+  <path d="M164 228C182 214 210 220 222 238C234 256 214 272 192 268C170 264 154 246 164 228Z" fill="#0B72E7" opacity="0.42"/>
+  <path d="M244 218C266 204 296 214 302 236C308 258 286 274 264 268C242 262 230 238 244 218Z" fill="#0B72E7" opacity="0.38"/>
+
+  <ellipse cx="200" cy="200" rx="168" ry="48" stroke="#0B72E7" stroke-width="1.5" opacity="0.35" transform="rotate(-22 200 200)"/>
+</svg>
