@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://adrianburgoscolas.github.io',
+  base: '/marvanto_web_site',
   integrations: [icon()],
 
   vite: {
