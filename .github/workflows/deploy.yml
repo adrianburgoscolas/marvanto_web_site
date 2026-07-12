@@ -10,7 +10,7 @@ permissions:
   pages: write
   id-token: write
 
-jobs:
+  jobs:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,9 +18,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        # with:
-          # path: . # La ubicación raíz de tu proyecto de Astro dentro del repositorio. (Opcional)
-          # package-manager: pnpm@latest # El gestor de paquetes a usar. (Opcional)
+        with:
+          node-version: '22'   # <--- Solución mágica aquí
 
   deploy:
     needs: build
