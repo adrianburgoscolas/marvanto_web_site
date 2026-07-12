@@ -1,0 +1,45 @@
+---
+import Telf from "./Telf.astro";
+import Email from "./Email.astro";
+---
+
+<div class="hidden border-b border-white/5 bg-marvanto-dark/80 lg:block">
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between px-8 py-2.5 text-xs lg:px-12"
+  >
+    <div class="flex items-center gap-6 text-marvanto-muted">
+      <span class="flex items-center gap-2">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="2"
+          ></circle>
+          <path
+            d="M12 7V12L15 14"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        07:30 – 19:00 · Lunes a Viernes
+      </span>
+      <Telf />
+      <Email />
+    </div>
+    <a
+      href="/contacto"
+      class="font-semibold text-marvanto-accent transition-colors hover:text-white"
+    >
+      Contáctanos →
+    </a>
+  </div>
+</div>

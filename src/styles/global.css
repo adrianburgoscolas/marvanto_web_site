@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marvanto-bg: #031124;
+  --color-marvanto-accent: #0b72e7;
+  --color-marvanto-accent-hover: #0960c4;
+  --color-marvanto-accent-light: #3d9aff;
+  --color-marvanto-card: #e2eef9;
+  --color-marvanto-muted: #60738c;
+  --color-marvanto-dark: #02101f;
+  --color-marvanto-white: #ffffff;
+
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-bento: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-marvanto-bg font-sans text-white antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-marvanto-accent;
+  }
+}
+
+@layer components {
+  .legal-prose section h2 {
+    @apply mb-4 text-xl font-bold text-white;
+  }
+
+  .legal-prose section p {
+    @apply mb-4 text-base leading-relaxed text-white/75;
+  }
+
+  .legal-prose section ul {
+    @apply mb-4 list-disc space-y-2 pl-6 text-white/75;
+  }
+
+  .legal-prose section li {
+    @apply text-base leading-relaxed;
+  }
+
+  .legal-prose section a {
+    @apply text-marvanto-accent underline-offset-2 transition-colors hover:text-white hover:underline;
+  }
+
+  .legal-prose section strong {
+    @apply font-semibold text-white/90;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(11, 114, 231, 0.22), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, rgba(61, 154, 255, 0.12), transparent 50%),
+      linear-gradient(180deg, #031124 0%, #02101f 100%);
+  }
+
+  .gradient-section {
+    background: linear-gradient(180deg, #02101f 0%, #031124 50%, #02101f 100%);
+  }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, #0b72e7 0%, #0960c4 50%, #031124 100%);
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply border border-white/10 bg-white/95 shadow-xl shadow-black/20 backdrop-blur-sm;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-marvanto-card to-marvanto-accent-light bg-clip-text text-transparent;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px rgba(11, 114, 231, 0.25);
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+
+  .animate-fade-up-delay {
+    animation: fade-up 0.7s ease-out 0.15s both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}

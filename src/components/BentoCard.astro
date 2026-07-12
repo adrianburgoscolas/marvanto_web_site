@@ -1,0 +1,95 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  variant?: "white" | "light" | "dark" | "map" | "glass";
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  buttonText,
+  buttonHref = "#",
+  variant = "white",
+  class: className = "",
+} = Astro.props;
+
+const variants = {
+  white: "bg-white text-marvanto-bg shadow-lg shadow-black/10 ring-1 ring-black/5",
+  light: "bg-marvanto-card text-marvanto-bg shadow-md",
+  dark: "glass text-white",
+  glass: "glass text-white",
+  map: "overflow-hidden bg-marvanto-bg ring-1 ring-white/10 p-0",
+};
+---
+
+<article
+  class:list={[
+    "group relative flex flex-col justify-between overflow-hidden rounded-3xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-marvanto-accent/10",
+    variant !== "map" && "p-6 md:p-8",
+    variants[variant],
+    className,
+  ]}
+>
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-marvanto-accent/0 to-marvanto-accent/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+  {
+    variant === "map" ? (
+      <div class="relative h-full min-h-[220px] w-full">
+        <slot name="icon" />
+      </div>
+    ) : (
+      <>
+        <div class="relative">
+          <div class="mb-5 flex items-start justify-between transition-transform duration-500 group-hover:scale-105">
+            <slot name="icon" />
+          </div>
+          {
+            title && (
+              <h3
+                class:list={[
+                  "text-lg font-extrabold tracking-tight uppercase md:text-xl",
+                  variant === "dark" || variant === "glass" ? "text-white" : "text-marvanto-bg",
+                ]}
+              >
+                {title}
+              </h3>
+            )
+          }
+          {
+            description && (
+              <p
+                class:list={[
+                  "mt-2 text-sm leading-relaxed md:text-base",
+                  variant === "dark" || variant === "glass" ? "text-white/70" : "text-marvanto-muted",
+                ]}
+              >
+                {description}
+              </p>
+            )
+          }
+          <slot />
+        </div>
+
+        {
+          buttonText && (
+            <div class="relative mt-6">
+              <a
+                href={buttonHref}
+                class="inline-flex min-h-11 items-center gap-2 rounded-xl bg-marvanto-bg px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 group-hover:bg-marvanto-accent"
+              >
+                {buttonText}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="transition-transform group-hover:translate-x-1">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          )
+        }
+      </>
+    )
+  }
+</article>

@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "h-full w-full" } = Astro.props;
+---
+
+<img src="/assets/svg/icon-map-contact.svg" alt="" class:list={["object-cover", className]} aria-hidden="true" loading="lazy" />

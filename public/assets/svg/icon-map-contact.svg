@@ -1,0 +1,34 @@
+<svg viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa interactivo">
+  <rect width="480" height="280" fill="#EEF2F7" rx="20"/>
+
+  <!-- Streets -->
+  <path d="M0 70H480M0 140H480M0 210H480" stroke="#D7DEE8" stroke-width="1.25"/>
+  <path d="M80 0V280M160 0V280M240 0V280M320 0V280M400 0V280" stroke="#D7DEE8" stroke-width="1.25"/>
+
+  <!-- Building blocks -->
+  <path d="M36 176H88V248H36Z" fill="#E2EEF9" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M48 144H76V176H48Z" fill="#D5E5F5" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M112 164H176V248H112Z" fill="#E2EEF9" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M128 120H160V164H128Z" fill="#D5E5F5" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M204 152H252V248H204Z" fill="#E2EEF9" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M216 112H244V152H216Z" fill="#D5E5F5" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M284 168H344V248H284Z" fill="#E2EEF9" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M300 124H328V168H300Z" fill="#D5E5F5" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M372 156H424V248H372Z" fill="#E2EEF9" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M384 116H412V156H384Z" fill="#D5E5F5" stroke="#C5D5E8" stroke-width="1"/>
+
+  <!-- 3D roof accents -->
+  <path d="M36 176L62 160L88 176" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M112 164L144 148L176 164" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M204 152L228 136L252 152" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M284 168L314 152L344 168" stroke="#C5D5E8" stroke-width="1"/>
+  <path d="M372 156L398 140L424 156" stroke="#C5D5E8" stroke-width="1"/>
+
+  <!-- Pins -->
+  <path d="M188 92C188 82.0589 195.059 75 205 75C214.941 75 222 82.0589 222 92C222 105.5 205 128 205 128C205 128 188 105.5 188 92Z" fill="#0B72E7"/>
+  <circle cx="205" cy="90" r="5" fill="#FFFFFF"/>
+  <path d="M332 84C332 76.8203 337.82 71 345 71C352.18 71 358 76.8203 358 84C358 94 345 112 345 112C345 112 332 94 332 84Z" fill="#0B72E7" opacity="0.88"/>
+  <circle cx="345" cy="82" r="4" fill="#FFFFFF" opacity="0.88"/>
+  <path d="M404 104C404 98.4772 408.477 94 414 94C419.523 94 424 98.4772 424 104C424 111.5 414 124 414 124C414 124 404 111.5 404 104Z" fill="#0B72E7" opacity="0.72"/>
+  <circle cx="414" cy="102" r="3.5" fill="#FFFFFF" opacity="0.72"/>
+</svg>
