@@ -1,12 +1,13 @@
 ---
 import TopBar from "./TopBar.astro";
 import Logo from "./Logo.astro";
+import { stripBase, withBase } from "../utils/paths";
 
-const currentPath = Astro.url.pathname;
+const currentPath = stripBase(Astro.url.pathname);
 const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/#categorias", label: "Servicios" },
-  { href: "/contacto", label: "Contacto" },
+  { href: withBase("/"), label: "Inicio" },
+  { href: withBase("/#categorias"), label: "Servicios" },
+  { href: withBase("/contacto"), label: "Contacto" },
 ];
 ---
 
@@ -74,7 +75,7 @@ const navLinks = [
         ))
       }
       <a
-        href="/contacto"
+        href={withBase("/contacto")}
         class="ml-3 rounded-full bg-marvanto-accent px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-marvanto-accent/30 transition-all duration-300 hover:scale-105 hover:bg-marvanto-accent-hover hover:shadow-marvanto-accent/40"
       >
         Saber Más
@@ -82,7 +83,7 @@ const navLinks = [
     </nav>
 
     <a
-      href="/contacto"
+      href={withBase("/contacto")}
       class="rounded-full bg-marvanto-accent/20 px-4 py-2 text-xs font-bold text-marvanto-accent ring-1 ring-marvanto-accent/30 md:hidden"
     >
       Contacto
@@ -109,7 +110,7 @@ const navLinks = [
       }
       <li class="mt-2">
         <a
-          href="/contacto"
+          href={withBase("/contacto")}
           class="block rounded-full bg-marvanto-accent px-4 py-3 text-center text-base font-semibold text-white"
         >
           Saber Más

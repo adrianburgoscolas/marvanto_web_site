@@ -11,6 +11,7 @@ import IconCart from "../components/icons/IconCart.astro";
 import IconGlobe from "../components/icons/IconGlobe.astro";
 import IconWorldMap from "../components/icons/IconWorldMap.astro";
 import IconQuote from "../components/icons/IconQuote.astro";
+import { withBase } from "../utils/paths";
 
 const commitments = [
   "Confidencialidad absoluta en cada transacción",
@@ -55,7 +56,7 @@ const features = [
       aria-hidden="true"
     >
       <img
-        src="/assets/svg/icon-world-map.svg"
+        src={withBase("/assets/svg/icon-world-map.svg")}
         alt=""
         class="h-full w-full bg-marvanto-accent object-cover"
       />
@@ -101,7 +102,7 @@ const features = [
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a
-            href="/contacto"
+            href={withBase("/contacto")}
             class="inline-flex min-h-12 items-center rounded-full bg-marvanto-accent px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-marvanto-accent/40 transition-all duration-300 hover:scale-105 hover:bg-marvanto-accent-hover"
           >
             Contáctanos
@@ -155,7 +156,7 @@ const features = [
           Asóciese con nosotros y simplifique la forma en que comercializa.
         </p>
         <a
-          href="/contacto"
+          href={withBase("/contacto")}
           class="inline-flex min-h-12 items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-marvanto-bg transition-all hover:bg-marvanto-accent hover:text-white"
         >
           Saber más
@@ -341,7 +342,7 @@ const features = [
         </div>
         <div class="mt-10 flex justify-center lg:justify-start">
           <a
-            href="/contacto"
+            href={withBase("/contacto")}
             class="inline-flex min-h-12 items-center rounded-full bg-marvanto-accent px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-marvanto-accent/30 transition-all hover:scale-105 hover:bg-marvanto-accent-hover"
           >
             Solicitar ahora
@@ -402,7 +403,7 @@ const features = [
           Eficiencia, confianza y resultados — en cada paso del camino.
         </p>
         <a
-          href="/contacto"
+          href={withBase("/contacto")}
           class="relative mt-8 inline-flex min-h-12 items-center rounded-full bg-white px-10 py-3 text-sm font-bold text-marvanto-bg transition-all hover:scale-105 hover:shadow-xl"
         >
           Contáctanos hoy
