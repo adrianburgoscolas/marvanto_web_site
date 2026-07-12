@@ -1,4 +1,6 @@
 ---
+import { withBase } from "../../utils/paths";
+
 interface Props {
   class?: string;
 }
@@ -6,4 +8,4 @@ interface Props {
 const { class: className = "h-10 w-10" } = Astro.props;
 ---
 
-<img src="/assets/svg/icon-location.svg" alt="" class={className} aria-hidden="true" loading="lazy" />
+<img src={withBase("/assets/svg/icon-location.svg")} alt="" class={className} aria-hidden="true" loading="lazy" />

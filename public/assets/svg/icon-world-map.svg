@@ -20,8 +20,8 @@
   </style>
 
   <g>
-    <!-- América del Norte: Washington D.C.-->
-    <g transform="translate(16, 38)">
+    <!-- América del Norte: USA-->
+    <g transform="translate(26, 42)">
       <circle class="pop-pulse" cx="0" cy="0" r="1.5">
         <animate attributeName="r" values="0.5; 3.5; 0.5" dur="2s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.8; 0; 0.8" dur="2s" repeatCount="indefinite" />
@@ -36,7 +36,6 @@
         <animate attributeName="opacity" values="0.8; 0; 0.8" dur="2s" repeatCount="indefinite" />
       </circle>
       <circle class="pop-center" cx="0" cy="0" r="0.6" />
-      <text class="pop-label" x="2" y="0.7">Brasilia</text>
     </g>
 
     <!-- Europa: Londres-->

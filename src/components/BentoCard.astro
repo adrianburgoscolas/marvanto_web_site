@@ -1,4 +1,6 @@
 ---
+import { withBase } from "../utils/paths";
+
 interface Props {
   title?: string;
   description?: string;
@@ -78,7 +80,7 @@ const variants = {
           buttonText && (
             <div class="relative mt-6">
               <a
-                href={buttonHref}
+                href={withBase(buttonHref)}
                 class="inline-flex min-h-11 items-center gap-2 rounded-xl bg-marvanto-bg px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 group-hover:bg-marvanto-accent"
               >
                 {buttonText}
