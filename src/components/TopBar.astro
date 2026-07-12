@@ -1,6 +1,7 @@
 ---
 import Telf from "./Telf.astro";
 import Email from "./Email.astro";
+import { withBase } from "../utils/paths";
 ---
 
 <div class="hidden border-b border-white/5 bg-marvanto-dark/80 lg:block">
@@ -36,7 +37,7 @@ import Email from "./Email.astro";
       <Email />
     </div>
     <a
-      href="/contacto"
+      href={withBase("/contacto")}
       class="font-semibold text-marvanto-accent transition-colors hover:text-white"
     >
       Contáctanos →

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LegalDocument from "../components/LegalDocument.astro";
+import { withBase } from "../utils/paths";
 
 const lastUpdated = "9 de julio de 2026";
 ---
@@ -63,7 +64,7 @@ const lastUpdated = "9 de julio de 2026";
           <h2>4. Confidencialidad</h2>
           <p>
             Respetamos su privacidad y tratamos la información de forma segura de acuerdo con nuestra
-            <a href="/privacidad">Política de Privacidad</a>, salvo que la divulgación sea requerida por ley o por autoridad competente.
+            <a href={withBase("/privacidad")}>Política de Privacidad</a>, salvo que la divulgación sea requerida por ley o por autoridad competente.
           </p>
         </section>
 

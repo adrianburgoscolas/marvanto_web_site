@@ -3,15 +3,16 @@ import Telf from "./Telf.astro";
 import Address from "./Address.astro";
 import Email from "./Email.astro";
 import Logo from "./Logo.astro";
+import { withBase } from "../utils/paths";
 
 const currentYear = new Date().getFullYear();
 
 const siteMap = [
-  { href: "/", label: "Inicio" },
-  { href: "/#categorias", label: "Servicios" },
-  { href: "/contacto", label: "Contacto" },
-  { href: "/terminos", label: "Términos" },
-  { href: "/privacidad", label: "Privacidad" },
+  { href: withBase("/"), label: "Inicio" },
+  { href: withBase("/#categorias"), label: "Servicios" },
+  { href: withBase("/contacto"), label: "Contacto" },
+  { href: withBase("/terminos"), label: "Términos" },
+  { href: withBase("/privacidad"), label: "Privacidad" },
 ];
 
 // const socialLinks = [
@@ -133,12 +134,12 @@ const siteMap = [
       </p>
       <div class="flex gap-6">
         <a
-          href="/privacidad"
+          href={withBase("/privacidad")}
           class="text-xs text-marvanto-muted transition-colors hover:text-white"
           >Privacidad</a
         >
         <a
-          href="/terminos"
+          href={withBase("/terminos")}
           class="text-xs text-marvanto-muted transition-colors hover:text-white"
           >Términos</a
         >

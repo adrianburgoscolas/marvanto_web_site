@@ -1,4 +1,6 @@
 ---
+import { withBase } from "../utils/paths";
+
 interface Props {
   class?: string;
   showText?: boolean;
@@ -8,12 +10,12 @@ const { class: className = "", showText = true } = Astro.props;
 ---
 
 <a
-  href="/"
+  href={withBase("/")}
   class:list={["group inline-flex items-center gap-3", className]}
   aria-label="Marvanto Distribution — Inicio"
 >
   <img
-    src="/assets/marvanto_logo.png"
+    src={withBase("/assets/marvanto_logo.png")}
     alt=""
     width="40"
     height="40"
