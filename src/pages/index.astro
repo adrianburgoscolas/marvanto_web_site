@@ -14,30 +14,84 @@ import IconQuote from "../components/icons/IconQuote.astro";
 import ProductCategoryCard from "../components/ProductCategoryCard.astro";
 import { withBase } from "../utils/paths";
 
-const productCategories = [
+const productCategoriesMayorista = [
   {
     title: "Electrodomésticos",
-    image: "/assets/images/electrodomesticos.webp",
+    image: "/assets/images/electrodomesticos_mayorista.webp",
   },
   {
     title: "Accesorios del hogar",
-    image: "/assets/images/accesorios_hogar.webp",
+    image: "/assets/images/hogar_mayorista.webp",
   },
   {
     title: "Alimentos",
-    image: "/assets/images/alimentos.webp",
+    image: "/assets/images/alimentos_mayorista.webp",
   },
   {
     title: "Bebidas",
-    image: "/assets/images/bebidas.webp",
+    image: "/assets/images/bebidas_mayorista.webp",
   },
   {
     title: "Materiales de construcción",
-    image: "/assets/images/construccion.webp",
+    image: "/assets/images/construccion_mayorista.webp",
   },
   {
     title: "Herramientas de trabajo",
-    image: "/assets/images/herramientas.webp",
+    image: "/assets/images/herramientas_mayorista.webp",
+  },
+];
+
+const productCategoriesMinorista = [
+  {
+    title: "Electrodomésticos",
+    image: "/assets/images/electrodomesticos_minorista.webp",
+  },
+  {
+    title: "Accesorios del hogar",
+    image: "/assets/images/hogar_minorista.webp",
+  },
+  {
+    title: "Alimentos",
+    image: "/assets/images/alimentos_minorista.webp",
+  },
+  {
+    title: "Bebidas",
+    image: "/assets/images/bebidas_minorista.webp",
+  },
+  {
+    title: "Materiales de construcción",
+    image: "/assets/images/construccion_minorista.webp",
+  },
+  {
+    title: "Herramientas de trabajo",
+    image: "/assets/images/herramientas_minorista.webp",
+  },
+];
+
+const productCategoriesOnline = [
+  {
+    title: "Electrodomésticos",
+    image: "/assets/images/electrodomesticos_online.webp",
+  },
+  {
+    title: "Accesorios del hogar",
+    image: "/assets/images/hogar_online.webp",
+  },
+  {
+    title: "Alimentos",
+    image: "/assets/images/alimentos_online.webp",
+  },
+  {
+    title: "Bebidas",
+    image: "/assets/images/bebidas_online.webp",
+  },
+  {
+    title: "Materiales de construcción",
+    image: "/assets/images/construccion_online.webp",
+  },
+  {
+    title: "Herramientas de trabajo",
+    image: "/assets/images/herramientas_online.webp",
   },
 ];
 
@@ -86,7 +140,7 @@ const features = [
       <img
         src={withBase("/assets/svg/icon-world-map.svg")}
         alt=""
-        class="h-full w-full bg-marvanto-accent object-cover"
+        class="h-full w-full object-cover"
       />
     </div>
     <div
@@ -168,7 +222,7 @@ const features = [
       class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12"
     >
       <div class="relative overflow-hidden rounded-3xl">
-        <IconWorldMap class="w-full rounded-3xl" />
+        <IconWorldMap class="w-full rounded-3xl bg" />
         <div
           class="absolute inset-0 bg-gradient-to-t from-marvanto-bg/80 to-transparent"
         >
@@ -241,17 +295,21 @@ const features = [
     class="border-t border-white/5 py-20 md:py-28"
     aria-labelledby="products-heading"
   >
+    <SectionHeading
+      eyebrow="Nuestro catálogo"
+      title="Categorías de productos"
+      align="center"
+    />
     <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
       <SectionHeading
-        eyebrow="Nuestro catálogo"
-        title="Categorías de productos"
-        description="Una amplia variedad de productos de alta calidad, cuidadosamente seleccionados para las necesidades de su negocio."
+        title="Ventas Mayoristas"
+        description="En Marvanto Distribution, te ofrecemos soluciones de distribución mayorista diseñadas para optimizar tu cadena de suministro y maximizar tus beneficios."
         align="center"
       />
 
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          productCategories.map((category) => (
+          productCategoriesMayorista.map((category) => (
             <ProductCategoryCard
               title={category.title}
               image={category.image}
@@ -259,6 +317,46 @@ const features = [
             />
           ))
         }
+      </div>
+
+      <div class="mt-10">
+        <SectionHeading
+          title="Ventas Minoristas"
+          description="Nos especializamos en conectar a fabricantes con minoristas como tú, facilitando el acceso a productos de alta calidad y un servicio personalizado."
+          align="center"
+        />
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            productCategoriesMinorista.map((category) => (
+              <ProductCategoryCard
+                title={category.title}
+                image={category.image}
+                href="/contacto"
+              />
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <SectionHeading
+          title="Ventas Online"
+          description="Accede a nuestras ventas online, una extensa cartera de productos de diversos sectores, seleccionados cuidadosamente para satisfacer las necesidades, al alcance de tu mano"
+          align="center"
+        />
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            productCategoriesOnline.map((category) => (
+              <ProductCategoryCard
+                title={category.title}
+                image={category.image}
+                href="/contacto"
+              />
+            ))
+          }
+        </div>
       </div>
 
       <div class="mt-10 text-center">
