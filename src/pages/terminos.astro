@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Address from "../components/Address.astro";
+import Email from "../components/Email.astro";
+import Telf from "../components/Telf.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LegalDocument from "../components/LegalDocument.astro";
@@ -16,7 +19,11 @@ const lastUpdated = "9 de julio de 2026";
 
   <section class="gradient-hero border-b border-white/5 py-16 md:py-20">
     <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
-      <p class="text-sm font-semibold tracking-[0.2em] text-marvanto-accent uppercase">Información legal</p>
+      <p
+        class="text-sm font-semibold tracking-[0.2em] text-marvanto-accent uppercase"
+      >
+        Información legal
+      </p>
     </div>
   </section>
 
@@ -30,22 +37,37 @@ const lastUpdated = "9 de julio de 2026";
         <section>
           <h2>1. Ámbito de los servicios</h2>
           <p>
-            Marvanto Distribution opera como intermediario de confianza que facilita transacciones mayoristas y minoristas seguras, confidenciales y eficientes. Nuestros Servicios incluyen:
+            Marvanto Distribution opera como intermediario de confianza que
+            facilita transacciones mayoristas y minoristas seguras,
+            confidenciales y eficientes. Nuestros Servicios incluyen:
           </p>
           <ul>
-            <li>Conexión entre compradores y proveedores en mercados nacionales e internacionales.</li>
-            <li>Coordinación logística, facilitación financiera y asesoramiento comercial.</li>
-            <li>Asistencia en cumplimiento normativo, documentación y comunicación segura.</li>
+            <li>
+              Conexión entre compradores y proveedores en mercados nacionales e
+              internacionales.
+            </li>
+            <li>
+              Coordinación logística, facilitación financiera y asesoramiento
+              comercial.
+            </li>
+            <li>
+              Asistencia en cumplimiento normativo, documentación y comunicación
+              segura.
+            </li>
           </ul>
           <p>
-            No adquirimos la propiedad de los bienes ni somos parte directa de ninguna transacción entre compradores y proveedores, salvo que se indique expresamente lo contrario por escrito.
+            No adquirimos la propiedad de los bienes ni somos parte directa de
+            ninguna transacción entre compradores y proveedores, salvo que se
+            indique expresamente lo contrario por escrito.
           </p>
         </section>
 
         <section>
           <h2>2. Elegibilidad</h2>
           <p>
-            Debe tener al menos 18 años y estar legalmente autorizado para actuar en nombre de cualquier entidad comercial que represente. Al utilizar nuestros Servicios, declara que cumple estos requisitos.
+            Debe tener al menos 18 años y estar legalmente autorizado para
+            actuar en nombre de cualquier entidad comercial que represente. Al
+            utilizar nuestros Servicios, declara que cumple estos requisitos.
           </p>
         </section>
 
@@ -54,24 +76,39 @@ const lastUpdated = "9 de julio de 2026";
           <p>Usted se compromete a:</p>
           <ul>
             <li>Proporcionar información veraz, completa y actualizada.</li>
-            <li>Cumplir con la legislación aplicable en su jurisdicción y en la de las operaciones que realice.</li>
-            <li>Mantener la confidencialidad de la información compartida a través de nuestra plataforma o canales oficiales.</li>
-            <li>No utilizar los Servicios con fines ilícitos, fraudulentos o que perjudiquen a terceros.</li>
+            <li>
+              Cumplir con la legislación aplicable en su jurisdicción y en la de
+              las operaciones que realice.
+            </li>
+            <li>
+              Mantener la confidencialidad de la información compartida a través
+              de nuestra plataforma o canales oficiales.
+            </li>
+            <li>
+              No utilizar los Servicios con fines ilícitos, fraudulentos o que
+              perjudiquen a terceros.
+            </li>
           </ul>
         </section>
 
         <section>
           <h2>4. Confidencialidad</h2>
           <p>
-            Respetamos su privacidad y tratamos la información de forma segura de acuerdo con nuestra
-            <a href={withBase("/privacidad")}>Política de Privacidad</a>, salvo que la divulgación sea requerida por ley o por autoridad competente.
+            Respetamos su privacidad y tratamos la información de forma segura
+            de acuerdo con nuestra
+            <a href={withBase("/privacidad")}>Política de Privacidad</a>, salvo
+            que la divulgación sea requerida por ley o por autoridad competente.
           </p>
         </section>
 
         <section>
           <h2>5. Pagos y honorarios</h2>
           <p>
-            Los honorarios, comisiones o tarifas aplicables serán comunicados con antelación y de forma transparente antes de la prestación del servicio correspondiente. No somos responsables de disputas económicas entre compradores y proveedores, salvo que se haya contratado expresamente un servicio de mediación financiera.
+            Los honorarios, comisiones o tarifas aplicables serán comunicados
+            con antelación y de forma transparente antes de la prestación del
+            servicio correspondiente. No somos responsables de disputas
+            económicas entre compradores y proveedores, salvo que se haya
+            contratado expresamente un servicio de mediación financiera.
           </p>
         </section>
 
@@ -79,48 +116,77 @@ const lastUpdated = "9 de julio de 2026";
           <h2>6. Limitación de responsabilidad</h2>
           <p>Marvanto Distribution no será responsable de:</p>
           <ul>
-            <li>Pérdidas derivadas de transacciones entre compradores y proveedores.</li>
-            <li>Retrasos, incidencias o fallos causados por terceros (transportistas, aduanas, entidades financieras, etc.).</li>
-            <li>Daños indirectos, incidentales, consecuenciales o lucro cesante.</li>
-            <li>Contenidos, productos o servicios ofrecidos por terceros vinculados desde nuestro sitio.</li>
+            <li>
+              Pérdidas derivadas de transacciones entre compradores y
+              proveedores.
+            </li>
+            <li>
+              Retrasos, incidencias o fallos causados por terceros
+              (transportistas, aduanas, entidades financieras, etc.).
+            </li>
+            <li>
+              Daños indirectos, incidentales, consecuenciales o lucro cesante.
+            </li>
+            <li>
+              Contenidos, productos o servicios ofrecidos por terceros
+              vinculados desde nuestro sitio.
+            </li>
           </ul>
           <p>
-            En la medida permitida por la ley aplicable, nuestra responsabilidad total quedará limitada al importe abonado por el usuario por los Servicios que hayan dado lugar a la reclamación en los doce (12) meses anteriores.
+            En la medida permitida por la ley aplicable, nuestra responsabilidad
+            total quedará limitada al importe abonado por el usuario por los
+            Servicios que hayan dado lugar a la reclamación en los doce (12)
+            meses anteriores.
           </p>
         </section>
 
         <section>
           <h2>7. Relaciones con terceros</h2>
           <p>
-            No somos responsables del contenido, productos, servicios ni prácticas de terceros a los que podamos hacer referencia o con los que colaboremos. Las relaciones comerciales directas se establecen entre las partes intervinientes en cada operación.
+            No somos responsables del contenido, productos, servicios ni
+            prácticas de terceros a los que podamos hacer referencia o con los
+            que colaboremos. Las relaciones comerciales directas se establecen
+            entre las partes intervinientes en cada operación.
           </p>
         </section>
 
         <section>
           <h2>8. Propiedad intelectual</h2>
           <p>
-            El sitio web, la marca, los logotipos, textos, diseños y demás elementos son propiedad de Marvanto Distribution o de sus licenciantes. Queda prohibida su reproducción o uso no autorizado sin consentimiento previo por escrito.
+            El sitio web, la marca, los logotipos, textos, diseños y demás
+            elementos son propiedad de Marvanto Distribution o de sus
+            licenciantes. Queda prohibida su reproducción o uso no autorizado
+            sin consentimiento previo por escrito.
           </p>
         </section>
 
         <section>
           <h2>9. Suspensión y terminación</h2>
           <p>
-            Nos reservamos el derecho de suspender o cancelar el acceso a los Servicios, de forma temporal o definitiva, si detectamos incumplimientos de estos Términos, actividades fraudulentas o riesgos para la seguridad de la plataforma o de otros usuarios.
+            Nos reservamos el derecho de suspender o cancelar el acceso a los
+            Servicios, de forma temporal o definitiva, si detectamos
+            incumplimientos de estos Términos, actividades fraudulentas o
+            riesgos para la seguridad de la plataforma o de otros usuarios.
           </p>
         </section>
 
         <section>
           <h2>10. Modificaciones</h2>
           <p>
-            Podemos actualizar estos Términos en cualquier momento. Publicaremos la versión vigente en esta página indicando la fecha de última actualización. El uso continuado de los Servicios tras los cambios implica la aceptación de los Términos revisados.
+            Podemos actualizar estos Términos en cualquier momento. Publicaremos
+            la versión vigente en esta página indicando la fecha de última
+            actualización. El uso continuado de los Servicios tras los cambios
+            implica la aceptación de los Términos revisados.
           </p>
         </section>
 
         <section>
           <h2>11. Legislación aplicable y jurisdicción</h2>
           <p>
-            Estos Términos se rigen por la legislación española. Para la resolución de controversias, las partes se someten a los Juzgados y Tribunales de Madrid (España), salvo que la normativa de protección al consumidor establezca un fuero imperativo diferente.
+            Estos Términos se rigen por la legislación española. Para la
+            resolución de controversias, las partes se someten a los Juzgados y
+            Tribunales de Madrid (España), salvo que la normativa de protección
+            al consumidor establezca un fuero imperativo diferente.
           </p>
         </section>
 
@@ -128,10 +194,12 @@ const lastUpdated = "9 de julio de 2026";
           <h2>12. Contacto</h2>
           <p>Si tiene preguntas sobre estos Términos, puede contactarnos en:</p>
           <ul>
-            <li>Email: <a href="mailto:info@marvanto.com">info@marvanto.com</a></li>
-            <li>Teléfono: <a href="tel:+34900000000">+34 900 000 000</a></li>
-            <li>Dirección: Calle Distribución 42, 28001 Madrid, España</li>
-            <li>Sitio web: <a href="https://www.marvanto.com">www.marvanto.com</a></li>
+            <li>Email: <Email slot="email" /></li>
+            <li>Teléfono: <Telf slot="telefono" /></li>
+            <li><Address slot="address" /></li>
+            <li>
+              Sitio web: <a href="https://www.marvanto.com">www.marvanto.com</a>
+            </li>
           </ul>
         </section>
       </LegalDocument>
