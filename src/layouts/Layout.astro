@@ -5,45 +5,90 @@ import { withBase } from "../utils/paths";
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
+  ogImage?: string;
 }
 
 const {
   title,
-  description = "Marvanto Distribution — Su socio de confianza en distribución global.",
+  description = "Marvanto Distribution Inc. — Su socio de confianza en distribución global. Conectamos compradores y proveedores con servicios logísticos, financieros y comerciales integrales.",
+  canonical,
+  ogImage = "/assets/marvanto_logo.png",
 } = Astro.props;
+
+const fullTitle = `${title} | Marvanto Distribution`;
+const siteUrl = "https://adrianburgoscolas.github.io";
+const pageUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}/marvanto_web_site`;
+const imageUrl = `${siteUrl}/marvanto_web_site${ogImage}`;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta
-      name="description"
-      content={description}
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href={withBase("/favicon.ico")}
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta tags esenciales -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={pageUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Marvanto Distribution" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
+
+    <!-- Preconnect para fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | Marvanto Distribution</title>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Marvanto Distribution",
+      "url": "https://adrianburgoscolas.github.io/marvanto_web_site",
+      "logo": "https://adrianburgoscolas.github.io/marvanto_web_site/assets/marvanto_logo.png",
+      "description": "Su socio de confianza en distribución global. Conectamos compradores y proveedores con servicios logísticos, financieros y comerciales integrales.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "25 NE 5TH ST, UNIT 3110",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33132",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-786-208-0856",
+        "contactType": "sales",
+        "email": "pcarlosmanuel002@gmail.com",
+        "availableLanguage": ["Spanish", "English"]
+      },
+      "sameAs": []
+    })} />
   </head>
   <body class="flex min-h-dvh flex-col">
     <slot name="header" />
@@ -53,3 +98,4 @@ const {
     <slot name="footer" />
   </body>
 </html>
+
