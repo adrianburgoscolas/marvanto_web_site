@@ -12,7 +12,7 @@ import tailwindcss from '@tailwindcss/vite';
 // - Hostinger:      ASTRO_BASE_PATH=/                   ASTRO_SITE=https://tudominio.com  (o sin setear)
 // - Local dev:      ASTRO_BASE_PATH=/  (se setea automáticamente en el script "dev")
 
-const base = process.env.ASTRO_BASE_PATH ?? '/';
+const base = process.env.ASTRO_BASE_PATH;
 const site = process.env.ASTRO_SITE;
 
 export default defineConfig({

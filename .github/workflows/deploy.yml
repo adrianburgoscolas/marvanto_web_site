@@ -20,7 +20,6 @@ jobs:
         uses: withastro/action@v3
         with:
           node-version: '22'
-          build-command: 'npm run build:gp'
         env:
           ASTRO_BASE_PATH: /marvanto_web_site
           ASTRO_SITE: https://adrianburgoscolas.github.io
