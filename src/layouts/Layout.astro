@@ -26,61 +26,145 @@ const siteHost = import.meta.env.SITE ?? "https://adrianburgoscolas.github.io";
 const siteUrl = siteHost.replace(/\/+$/, "");
 const basePath = rawBase.endsWith("/") ? rawBase.replace(/\/+$/, "") : rawBase;
 
-const pageUrl = canonical
-  ? `${siteUrl}${canonical}`
-  : `${siteUrl}${basePath}/`;
+const pageUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${basePath}/`;
 const imageUrl = `${siteUrl}${basePath}${ogImage}`;
-const defaultOgAlt = ogImageAlt ?? "Marvanto Distribution — Logotipo corporativo";
+const defaultOgAlt =
+  ogImageAlt ?? "Marvanto Distribution — Logotipo corporativo";
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <!-- Meta tags esenciales -->
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={pageUrl} />
+    <meta
+      name="description"
+      content={description}
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <link
+      rel="canonical"
+      href={pageUrl}
+    />
 
     <!-- Theme color -->
-    <meta name="theme-color" content="#0b72e7" />
-    <meta name="msapplication-TileColor" content="#031124" />
+    <meta
+      name="theme-color"
+      content="#0b72e7"
+    />
+    <meta
+      name="msapplication-TileColor"
+      content="#031124"
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={pageUrl} />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={imageUrl} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={defaultOgAlt} />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="Marvanto Distribution" />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content={pageUrl}
+    />
+    <meta
+      property="og:title"
+      content={fullTitle}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={imageUrl}
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+    <meta
+      property="og:image:alt"
+      content={defaultOgAlt}
+    />
+    <meta
+      property="og:locale"
+      content="es_ES"
+    />
+    <meta
+      property="og:site_name"
+      content="Marvanto Distribution"
+    />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageUrl} />
-    <meta name="twitter:image:alt" content={defaultOgAlt} />
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content={fullTitle}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      name="twitter:image"
+      content={imageUrl}
+    />
+    <meta
+      name="twitter:image:alt"
+      content={defaultOgAlt}
+    />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
-    <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32x32.png")} />
-    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href={withBase("/favicon.ico")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={withBase("/favicon-32x32.png")}
+    />
 
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href={withBase("/apple-touch-icon.png")} />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={withBase("/apple-touch-icon.png")}
+    />
     <!-- Web App Manifest -->
-    <link rel="manifest" href={withBase("/site.webmanifest")} />
+    <link
+      rel="manifest"
+      href={withBase("/site.webmanifest")}
+    />
 
     <!-- Preconnect para fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
 
     <!-- Fonts -->
     <link
@@ -89,37 +173,51 @@ const defaultOgAlt = ogImageAlt ?? "Marvanto Distribution — Logotipo corporati
     />
 
     <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Marvanto Distribution",
-      "url": siteUrl + basePath,
-      "logo": `${siteUrl}${basePath}/assets/marvanto_logo.png`,
-      "description": "Su socio de confianza en distribucio\u0301n global. Conectamos compradores y proveedores con servicios logi\u0301sticos, financieros y comerciales integrales.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "25 NE 5TH ST, UNIT 3110",
-        "addressLocality": "Miami",
-        "addressRegion": "FL",
-        "postalCode": "33132",
-        "addressCountry": "US"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-786-208-0856",
-        "contactType": "sales",
-        "email": "pcarlosmanuel002@gmail.com",
-        "availableLanguage": ["Spanish", "English"]
-      },
-      "sameAs": []
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Marvanto Distribution",
+        url: siteUrl + basePath,
+        logo: `${siteUrl}${basePath}/assets/marvanto_logo.png`,
+        description:
+          "Su socio de confianza en distribucio\u0301n global. Conectamos compradores y proveedores con servicios logi\u0301sticos, financieros y comerciales integrales.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "25 NE 5TH ST, UNIT 3110",
+          addressLocality: "Miami",
+          addressRegion: "FL",
+          postalCode: "33132",
+          addressCountry: "US",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+1-786-208-0856",
+          contactType: "sales",
+          email: "pcarlosmanuel002@gmail.com",
+          availableLanguage: ["Spanish", "English"],
+        },
+        sameAs: [],
+      })}
+    />
 
     <!-- Sitemap discovery -->
-    <link rel="sitemap" type="application/xml" href={`${siteUrl}${basePath}/sitemap-index.xml`} />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      href={`${siteUrl}${basePath}/sitemap-index.xml`}
+    />
 
     <!-- DNS prefetch for performance -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link
+      rel="dns-prefetch"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="dns-prefetch"
+      href="https://fonts.gstatic.com"
+    />
   </head>
   <body class="flex min-h-dvh flex-col">
     <slot name="header" />
@@ -129,4 +227,3 @@ const defaultOgAlt = ogImageAlt ?? "Marvanto Distribution — Logotipo corporati
     <slot name="footer" />
   </body>
 </html>
-
