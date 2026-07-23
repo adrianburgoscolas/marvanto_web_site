@@ -24,7 +24,7 @@ jobs:
           ASTRO_BASE_PATH: /marvanto_web_site
           ASTRO_SITE: https://adrianburgoscolas.github.io
   deploy:
-    needs: build
+    needs: build:gp
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
