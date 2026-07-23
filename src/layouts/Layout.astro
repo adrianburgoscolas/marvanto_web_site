@@ -17,9 +17,17 @@ const {
 } = Astro.props;
 
 const fullTitle = `${title} | Marvanto Distribution`;
-const siteUrl = "https://adrianburgoscolas.github.io";
-const pageUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}/marvanto_web_site`;
-const imageUrl = `${siteUrl}/marvanto_web_site${ogImage}`;
+
+// Dynamic site URL based on environment
+const rawBase = import.meta.env.BASE_URL;
+const siteHost = import.meta.env.SITE ?? "https://adrianburgoscolas.github.io";
+const siteUrl = siteHost.replace(/\/+$/, "");
+const basePath = rawBase.endsWith("/") ? rawBase.replace(/\/+$/, "") : rawBase;
+
+const pageUrl = canonical
+  ? `${siteUrl}${canonical}`
+  : `${siteUrl}${basePath}/`;
+const imageUrl = `${siteUrl}${basePath}${ogImage}`;
 ---
 
 <!doctype html>
@@ -69,8 +77,8 @@ const imageUrl = `${siteUrl}/marvanto_web_site${ogImage}`;
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Marvanto Distribution",
-      "url": "https://adrianburgoscolas.github.io/marvanto_web_site",
-      "logo": "https://adrianburgoscolas.github.io/marvanto_web_site/assets/marvanto_logo.png",
+      "url": siteUrl + basePath,
+      "logo": `${siteUrl}${basePath}/assets/marvanto_logo.png`,
       "description": "Su socio de confianza en distribución global. Conectamos compradores y proveedores con servicios logísticos, financieros y comerciales integrales.",
       "address": {
         "@type": "PostalAddress",
@@ -89,6 +97,13 @@ const imageUrl = `${siteUrl}/marvanto_web_site${ogImage}`;
       },
       "sameAs": []
     })} />
+
+    <!-- Sitemap discovery -->
+    <link rel="sitemap" type="application/xml" href={`${siteUrl}${basePath}/sitemap-index.xml`} />
+
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   </head>
   <body class="flex min-h-dvh flex-col">
     <slot name="header" />
