@@ -1,71 +1,111 @@
 ---
+interface Props {
+  variant?: "light" | "dark";
+}
+
+const { variant = "light" } = Astro.props;
 ---
 
-<form class="space-y-5" method="POST" action="#" aria-label="Formulario de contacto">
+<form class="space-y-5" method="POST" action="#" aria-label="Formulario de contacto profesional">
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
     <div>
-      <label for="nombre" class="mb-1.5 block text-sm font-medium text-marvanto-bg">
+      <label for="nombre" class="mb-1.5 block text-sm font-medium"
+        class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>
         Nombre <span class="text-marvanto-accent" aria-hidden="true">*</span>
       </label>
-      <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        required
-        autocomplete="given-name"
-        placeholder="Tu nombre"
-        class="min-h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 text-marvanto-bg placeholder:text-marvanto-muted/50 transition-colors focus:border-marvanto-accent focus:bg-white focus:outline-none focus:ring-2 focus:ring-marvanto-accent/20"
-      />
+      <input type="text" id="nombre" name="nombre" required autocomplete="given-name" placeholder="Tu nombre"
+        class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2"
+        class:list={[variant === "dark"
+          ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+          : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]} />
     </div>
     <div>
-      <label for="apellido" class="mb-1.5 block text-sm font-medium text-marvanto-bg">
+      <label for="apellido" class="mb-1.5 block text-sm font-medium"
+        class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>
         Apellido <span class="text-marvanto-accent" aria-hidden="true">*</span>
       </label>
-      <input
-        type="text"
-        id="apellido"
-        name="apellido"
-        required
-        autocomplete="family-name"
-        placeholder="Tu apellido"
-        class="min-h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 text-marvanto-bg placeholder:text-marvanto-muted/50 transition-colors focus:border-marvanto-accent focus:bg-white focus:outline-none focus:ring-2 focus:ring-marvanto-accent/20"
-      />
+      <input type="text" id="apellido" name="apellido" required autocomplete="family-name" placeholder="Tu apellido"
+        class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2"
+        class:list={[variant === "dark"
+          ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+          : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]} />
     </div>
   </div>
 
   <div>
-    <label for="email" class="mb-1.5 block text-sm font-medium text-marvanto-bg">
-      Email <span class="text-marvanto-accent" aria-hidden="true">*</span>
-    </label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      required
-      autocomplete="email"
-      placeholder="tu@email.com"
-      class="min-h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 text-marvanto-bg placeholder:text-marvanto-muted/50 transition-colors focus:border-marvanto-accent focus:bg-white focus:outline-none focus:ring-2 focus:ring-marvanto-accent/20"
-    />
+    <label for="empresa" class="mb-1.5 block text-sm font-medium"
+      class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>Empresa</label>
+    <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Nombre de tu empresa (opcional)"
+      class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2"
+      class:list={[variant === "dark"
+        ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+        : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]} />
+  </div>
+
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div>
+      <label for="email" class="mb-1.5 block text-sm font-medium"
+        class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>Email corporativo <span class="text-marvanto-accent" aria-hidden="true">*</span></label>
+      <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@empresa.com"
+        class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2"
+        class:list={[variant === "dark"
+          ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+          : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]} />
+    </div>
+    <div>
+      <label for="telefono" class="mb-1.5 block text-sm font-medium"
+        class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>Telefono <span class="text-marvanto-accent" aria-hidden="true">*</span></label>
+      <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="+1 (555) 000-0000"
+        class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2"
+        class:list={[variant === "dark"
+          ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+          : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]} />
+    </div>
   </div>
 
   <div>
-    <label for="mensaje" class="mb-1.5 block text-sm font-medium text-marvanto-bg">
-      Mensaje <span class="text-marvanto-accent" aria-hidden="true">*</span>
-    </label>
-    <textarea
-      id="mensaje"
-      name="mensaje"
-      required
-      rows="5"
-      placeholder="Cuéntanos sobre tu proyecto..."
-      class="w-full resize-y rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-marvanto-bg placeholder:text-marvanto-muted/50 transition-colors focus:border-marvanto-accent focus:bg-white focus:outline-none focus:ring-2 focus:ring-marvanto-accent/20"
-    ></textarea>
+    <label for="tipo_consulta" class="mb-1.5 block text-sm font-medium"
+      class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>Tipo de consulta <span class="text-marvanto-accent" aria-hidden="true">*</span></label>
+    <select id="tipo_consulta" name="tipo_consulta" required
+      class="min-h-12 w-full rounded-xl border px-4 transition-all duration-200 focus:outline-none focus:ring-2 appearance-none"
+      class:list={[variant === "dark"
+        ? "border-white/20 bg-white/10 text-white focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+        : "border-gray-200 bg-gray-50 text-marvanto-bg focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]}>
+      <option value="" disabled selected>Selecciona una opcion</option>
+      <option value="mayorista">Compra mayorista</option>
+      <option value="minorista">Compra minorista</option>
+      <option value="proveedor">Quiero ser proveedor</option>
+      <option value="logistica">Servicios logisticos</option>
+      <option value="socio">Alianza estrategica</option>
+      <option value="otro">Otro</option>
+    </select>
   </div>
 
-  <button
-    type="submit"
-    class="min-h-12 w-full rounded-xl bg-marvanto-bg px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-marvanto-bg/20 transition-all duration-300 hover:bg-marvanto-accent hover:shadow-marvanto-accent/30 focus:outline-none focus:ring-2 focus:ring-marvanto-accent focus:ring-offset-2"
-  >
-    Enviar mensaje
+  <div>
+    <label for="mensaje" class="mb-1.5 block text-sm font-medium"
+      class:list={[variant === "dark" ? "text-white" : "text-marvanto-bg"]}>Mensaje <span class="text-marvanto-accent" aria-hidden="true">*</span></label>
+    <textarea id="mensaje" name="mensaje" required rows="5"
+      placeholder="Cuantanos sobre tu proyecto, volumenes estimados y mercados de interes..."
+      class="w-full resize-y rounded-xl border px-4 py-3 transition-all duration-200 focus:outline-none focus:ring-2"
+      class:list={[variant === "dark"
+        ? "border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-marvanto-accent focus:ring-marvanto-accent/30"
+        : "border-gray-200 bg-gray-50 text-marvanto-bg placeholder:text-marvanto-muted/50 focus:border-marvanto-accent focus:bg-white focus:ring-marvanto-accent/20"]}></textarea>
+  </div>
+
+  <button type="submit"
+    class="group relative min-h-12 w-full overflow-hidden rounded-xl px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-marvanto-accent focus:ring-offset-2"
+    class:list={[variant === "dark"
+      ? "bg-marvanto-accent hover:bg-marvanto-accent-hover shadow-marvanto-accent/30"
+      : "bg-marvanto-bg hover:bg-marvanto-accent hover:shadow-marvanto-accent/30"]}>
+    <span class="relative z-10 flex items-center justify-center gap-2">
+      Enviar mensaje
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">
+        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="absolute inset-0 -translate-x-full transition-transform duration-500 group-hover:translate-x-0"
+      class:list={[variant === "dark"
+        ? "bg-gradient-to-r from-marvanto-accent-hover to-marvanto-accent"
+        : "bg-gradient-to-r from-marvanto-accent to-marvanto-accent-hover"]} />
   </button>
 </form>

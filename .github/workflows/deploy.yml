@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   workflow_dispatch:
 
 permissions:
@@ -19,8 +19,10 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
-          node-version: '22'   # <--- Solución mágica aquí
-
+          node-version: '22'
+        env:
+          ASTRO_BASE_PATH: /marvanto_web_site
+          ASTRO_SITE: https://adrianburgoscolas.github.io
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -28,3 +30,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
