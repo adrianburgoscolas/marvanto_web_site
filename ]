@@ -6,8 +6,11 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": " astro dev",
+    "dev:gp": "ASTRO_BASE_PATH=/marvanto_web_site ASTRO_SITE=https://adrianburgoscolas.github.io astro dev",
     "build": "astro build",
+    "build:hostinger": "ASTRO_BASE_PATH=/ ASTRO_SITE=https://marvantodistribution.com astro build",
+    "build:gp": "ASTRO_BASE_PATH=/marvanto_web_site ASTRO_SITE=https://adrianburgoscolas.github.io astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
