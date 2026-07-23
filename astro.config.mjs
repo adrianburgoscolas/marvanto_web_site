@@ -9,11 +9,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Environment-based configuration:
 // - GitHub Pages:   ASTRO_BASE_PATH=/marvanto_web_site  ASTRO_SITE=https://adrianburgoscolas.github.io
-// - Hostinger:      ASTRO_BASE_PATH=/                   ASTRO_SITE=https://tudominio.com  (o sin setear)
+// - Hostinger:      ASTRO_BASE_PATH=/                   ASTRO_SITE=https://marvantodistribution.com
 // - Local dev:      ASTRO_BASE_PATH=/  (se setea automáticamente en el script "dev")
 
-const base = process.env.ASTRO_BASE_PATH;
-const site = process.env.ASTRO_SITE;
+const base = process.env.ASTRO_BASE_PATH ?? '/marvanto_web_site';
+const site = process.env.ASTRO_SITE ?? 'https://adrianburgoscolas.github.io';
 
 export default defineConfig({
   site,

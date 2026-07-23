@@ -1,0 +1,21 @@
+{
+  "name": "Marvanto Distribution",
+  "short_name": "Marvanto",
+  "description": "Su socio de confianza en distribución global. Conectamos compradores y proveedores con servicios logísticos, financieros y comerciales integrales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031124",
+  "theme_color": "#0b72e7",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
