@@ -9,7 +9,7 @@
     "dev": "ASTRO_BASE_PATH=/ astro dev",
     "dev:gp": "ASTRO_BASE_PATH=/marvanto_web_site ASTRO_SITE=https://adrianburgoscolas.github.io astro dev",
     "build": "astro build",
-    "build:hostinger": "ASTRO_BASE_PATH=/ ASTRO_SITE=https://marvanto.com astro build",
+    "build:hostinger": "ASTRO_BASE_PATH=/ ASTRO_SITE=https://marvantodistribution.com astro build",
     "build:gp": "ASTRO_BASE_PATH=/marvanto_web_site ASTRO_SITE=https://adrianburgoscolas.github.io astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -26,4 +26,3 @@
   },
   "packageManager": "pnpm@10.25.0"
 }
-
